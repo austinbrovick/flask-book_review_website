@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href='/static/css/nav.css'>
+    <link rel="stylesheet" type="text/css" href="/static/css/home.css">
+</head>
+<body>
+    <div id='main_wrapper'>
+        <nav>
+            <ul>
+                <li id='welcome_name'><h3>Welcome {{session['current_user']['first_name']}}</h3></li>
+                <li class='book_review_button'>
+                    <h3><a href='/reviews/go_to_add_review'>Add Book and Review</a></h3>
+                </li>
+                <li>
+                    <h3><a href='/users/home'>Home</a></h3>
+                </li>
+                <li>
+                    <h3><a href='/users/profile'>Profile</a></h3>
+                </li>
+                <li>
+                    <h3><a href='/users/logout'>Logout</a></h3>
+                </li>
+
+            </ul>
+        </nav>
+        <div id='content_wrapper'>
+            <h3>Recent Book Reviews</h3>
+            <div id='recent_reviews_wrapper'>
+                {% for review in reviews %}
+                    <h2><a href='/reviews/book_review/{{review["book_primary_id"]}}'>{{review['title']}}</a></h2>
+                    <h3>{{review['first_name']}} {{review['last_name']}}</h3>
+                    <h2>{{review['review']}}</h2>
+                {% endfor %}
+            </div>
+            <div id='all_books_wrapper'>
+                {% for book in reviews_all %}
+                    <h3><a href='/reviews/book_review/{{book["book_primary_id"]}}'>{{book['title']}}</a></h3>
+                {% endfor %}
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href='/static/css/profile.css'>
+</head>
+<body>
+    <div id='main_wrapper'>
+        <nav>
+            <ul>
+                <li id='welcome_name'><h3>Welcome {{session['current_user']['first_name']}}</h3></li>
+                <li class='book_review_button'>
+                    <h3><a href='/reviews/go_to_add_review'>Add Book and Review</a></h3>
+                </li>
+                <li>
+                    <h3><a href='/users/home'>Home</a></h3>
+                </li>
+                <li>
+                    <h3><a href='/users/profile'>Profile</a></h3>
+                </li>
+                <li>
+                    <h3><a href='/users/logout'>Logout</a></h3>
+                </li>
+
+            </ul>
+        </nav>
+        <div id='user_info_container'>
+
+        </div>
+        <div id='content_wrapper'>
+            <h3>User Alias: {{session['current_user']['alias']}}</h3>
+            <h3>Name: {{session['current_user']['first_name']}}{{session['current_user']['last_name']}}</h3>
+            <h3>Email: {{session['current_user']['email']}}</h3>
+            <div id='reviews_wrapper'>
+                <h4>Posted Reviews On The Following Books</h4>
+                {% for review in user_reviews %}
+                    <p><a href='/reviews/book_review/{{review["book_primary_id"]}}'>{{review['title']}}</a></p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

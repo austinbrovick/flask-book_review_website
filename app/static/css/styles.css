@@ -1,3 +1,28 @@
 * {
   font-family: monaco;
+  padding: 0;
+  margin: 0;
+}
+#main_wrapper {
+  width: 250px;
+  margin: 20% auto;
+  border: 30px solid black;
+}
+#login {
+  width: 250px;
+  margin: 0 auto;
+  /*border: 4px solid black;*/
+}
+
+#register {
+  width: 250px;
+  margin: 0 auto;
+  /*border: 4px solid black;*/
+}
+
+input {
+  width: 250px;
+  height: 30px;
+  text-align: center;
+  margin: 0;
 }

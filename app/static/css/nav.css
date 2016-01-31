@@ -1,0 +1,27 @@
+ul {
+    margin-left: 200px
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 30px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+nav {
+    background-color: gray;
+    color: white;
+}
+
+#main_wrapper {
+  width: 100%;
+  margin: auto;
+}
+
+#content_wrapper {
+  width: 980px;
+  margin: auto;
+}

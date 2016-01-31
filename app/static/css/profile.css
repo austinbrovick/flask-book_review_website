@@ -1,0 +1,29 @@
+ul {
+    margin-left: 200px
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 30px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+nav {
+    background-color: gray;
+    color: white;
+}
+
+#content_wrapper {
+    width: 980px;
+    margin: auto;
+}
+
+
+
+#reviews_wrapper {
+    width: 600px;
+    margin: auto;
+}

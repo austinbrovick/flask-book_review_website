@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href='/static/css/nav.css'>
+</head>
+<body>
+    <div id='main_wrapper'>
+        <nav>
+            <ul>
+                <li id='welcome_name'><h3>Welcome {{session['current_user']['first_name']}}</h3></li>
+                <li class='book_review_button'>
+                    <h3><a href='/reviews/go_to_add_review'>Add Book and Review</a></h3>
+                </li>
+                <li>
+                    <h3><a href='/users/home'>Home</a></h3>
+                </li>
+                <li>
+                    <h3><a href='/users/logout'>Logout</a></h3>
+                </li>
+
+            </ul>
+        </nav>
+        <div id='content_wrapper'>
+            <div id='reviews_wrapper'>
+                <h1>Reviews For {{reviews[0]['title']}}</h1>
+                <h2>Author: {{reviews[0]['name']}}</h2>
+                {% for review in reviews %}
+                    <p>{{review['first_name']}} {{reviews['last_name']}}</p>
+                    <p>{{review['review_created_at']}}</p>
+                    <p>{{review['review']}}<p>
+                    {% if review['user_id'] == session['current_user']['id'] %}
+                        <form action='/reviews/delete/{{review["review_primary_id"]}}' method='post'>
+                            <input type='submit' value='DELETE'>
+                        </form>
+                    {% endif %}
+                {% endfor %}
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+</body>
+</html>

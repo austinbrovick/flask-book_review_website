@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>Add A Book Review</title>
+    <link rel="stylesheet" type="text/css" href='/static/css/nav.css'>
+</head>
+<body>
+    <div id='main_wrapper'>
+        <nav>
+            <ul>
+                <li id='welcome_name'><h3>Welcome {{session['current_user']['first_name']}}</h3></li>
+                <li class='book_review_button'>
+                    <h3><a href='/reviews/go_to_add_review'>Add Book and Review</a></h3>
+                </li>
+                <li>
+                    <h3><a href='/users/home'>Home</a></h3>
+                </li>
+                <li>
+                    <h3><a href='/users/profile'>Profile</a></h3>
+                </li>
+                <li>
+                    <h3><a href='/users/logout'>Logout</a></h3>
+                </li>
+
+            </ul>
+        </nav>
+        <div id='content_wrapper'>
+            <h3> Add a New Book Title and a Review</h3>
+            <form action='/reviews/create_review' method='post'>
+                <table>
+                    <tr>
+                        <td>Book Title</td>
+                        <td><input type='text' name='title'></td>
+                    </tr>
+                    <tr>
+                        <td>Author</td>
+                        <td><input type='text' name='author'></td>
+                    </tr>
+                    <tr>
+                        <td>Review</td>
+                        <td>
+                            <textarea name='description'></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Rating</td>
+                        <td>
+                            <select name='rating'>
+                                <option name='1'>1</option>
+                                <option name='2'>2</option>
+                                <option name='3'>3</option>
+                                <option name='4'>4</option>
+                                <option name='5'>5</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type='submit' value='SUBMIT REVIEW'></td>
+                </table>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -3,6 +3,76 @@
     <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
   </head>
   <body>
-    The best place to start is the "WelcomeController.py" file in app/controllers.
+    <div id='main_wrapper'>
+      {{message}}
+      <div id='login'>
+        <form action='/users/login' method='post'>
+          <table>
+            <tr>
+              <!-- <td>Email:</td> -->
+              <td><input type='text' name='email' placeholder='email'></td>
+            </tr>
+            <tr>
+              <!-- <td>Password:</td> -->
+              <td><input type='password' name='password' placeholder='password'>
+            </tr>
+            <tr>
+              <td><input type='submit' value='LOGIN'></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+
+
+
+
+
+
+
+
+      <div id='register'>
+        {% for error in errors %}
+          <p>{{error}}</p>
+        {% endfor %}
+        <form action='/users/register' method='post'>
+          <table>
+            <tr>
+              <!-- <td>First Name: </td> -->
+              <td><input type='text' name='first_name' placeholder='first name'></td>
+            </tr>
+            <tr>
+              <!-- <td>Last Name: </td> -->
+              <td><input type='text' name='last_name' placeholder='last name'></td>
+            </tr>
+            <tr>
+              <!-- <td>Email</td> -->
+              <td><input type='text' name='email' placeholder='email'></td>
+            </tr>
+            <tr>
+              <td><input type='text' name='alias' placeholder='alias'></td>
+            </tr>
+            <tr>
+              <!-- <td>Password</td> -->
+              <td><input type='password' name='password' placeholder='password'></td>
+            </tr>
+            <tr>
+              <!-- <td>Confirm Password:</td> -->
+              <td><input type='password' name='confirm_password' placeholder='confirm password'></td>
+            </tr>
+            <tr>
+              <td><input type='submit' value='REGISTER'></td>
+            </tr>
+          </table>
+        </form>
+
+
+
+
+      </div>
+
+
+
+
+    </div>
   </body>
 </html>
